@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 소개 카드 & 시간표</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 내 소개 카드 -->
+        <div class="card">
+            <div class="card-header">내 소개 카드</div>
+            <div class="card-content">
+                <input type="text" id="userName" placeholder="이름을 입력하세요" value="김철수">
+                <input type="text" id="userJob" placeholder="직업을 입력하세요" value="학생">
+                <textarea id="userBio" placeholder="자기소개를 입력하세요">안녕하세요! 저는 웹 개발을 배우고 있는 학생입니다.</textarea>
+                <div id="cardPreview" class="card-preview">
+                    <h2 id="previewName">김철수</h2>
+                    <p id="previewJob">학생</p>
+                    <p id="previewBio">안녕하세요! 저는 웹 개발을 배우고 있는 학생입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 시간표 -->
+        <div class="card">
+            <div class="card-header">내 시간표</div>
+            <div class="card-content">
+                <div class="timetable-controls">
+                    <label>시간 간격 설정:</label>
+                    <select id="timeInterval">
+                        <option value="60">1시간</option>
+                        <option value="30">30분</option>
+                    </select>
+                </div>
+                
+                <table id="timetable" class="timetable">
+                    <thead>
+                        <tr>
+                            <th>교시</th>
+                            <th>시간</th>
+                            <th>강의명</th>
+                            <th>강의실</th>
+                            <th>교수</th>
+                            <th>전공</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timetableBody">
+                    </tbody>
+                </table>
+                <button id="addClassBtn" class="add-btn">+ 강의 추가</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 카드 스타일 */
+.card {
+    border: 2px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    border-bottom: 2px solid black;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* 내 소개 카드 입력 */
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* 카드 미리보기 */
+.card-preview {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.card-preview h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.card-preview p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* 시간표 스타일 */
+.timetable-controls {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timetable-controls label {
+    font-weight: bold;
+}
+
+.timetable-controls select {
+    width: auto;
+    padding: 8px 12px;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-bottom: 15px;
+}
+
+.timetable th {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.timetable td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.timetable input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+.timetable input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* 버튼 스타일 */
+.add-btn,
+.delete-btn {
+    padding: 10px 20px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.add-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #ffcccc;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .timetable {
+        font-size: 12px;
+    }
+    
+    .timetable th,
+    .timetable td {
+        padding: 6px;
+    }
+}
