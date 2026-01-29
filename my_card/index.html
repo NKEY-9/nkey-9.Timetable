@@ -3,54 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 소개 카드 & 시간표</title>
+    <title>대학생 시간표</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- 내 소개 카드 -->
-        <div class="card">
-            <div class="card-header">내 소개 카드</div>
-            <div class="card-content">
-                <input type="text" id="userName" placeholder="이름을 입력하세요" value="김철수">
-                <input type="text" id="userJob" placeholder="직업을 입력하세요" value="학생">
-                <textarea id="userBio" placeholder="자기소개를 입력하세요">안녕하세요! 저는 웹 개발을 배우고 있는 학생입니다.</textarea>
-                <div id="cardPreview" class="card-preview">
-                    <h2 id="previewName">김철수</h2>
-                    <p id="previewJob">학생</p>
-                    <p id="previewBio">안녕하세요! 저는 웹 개발을 배우고 있는 학생입니다.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 시간표 -->
-        <div class="card">
-            <div class="card-header">내 시간표</div>
-            <div class="card-content">
-                <div class="timetable-controls">
-                    <label>시간 간격 설정:</label>
-                    <select id="timeInterval">
-                        <option value="60">1시간</option>
-                        <option value="30">30분</option>
-                    </select>
-                </div>
-                
-                <table id="timetable" class="timetable">
+        <h1>📚 나의 시간표</h1>
+        
+        <div class="main-content">
+            <!-- 시간표 영역 -->
+            <div class="schedule-area">
+                <table class="timetable">
                     <thead>
                         <tr>
-                            <th>교시</th>
                             <th>시간</th>
-                            <th>강의명</th>
-                            <th>강의실</th>
-                            <th>교수</th>
-                            <th>전공</th>
-                            <th>삭제</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
                         </tr>
                     </thead>
-                    <tbody id="timetableBody">
+                    <tbody id="scheduleTable">
+                        <!-- JavaScript로 생성됨 -->
                     </tbody>
                 </table>
-                <button id="addClassBtn" class="add-btn">+ 강의 추가</button>
+            </div>
+
+            <!-- 입력 폼 영역 -->
+            <div class="form-area">
+                <h2>강의 추가</h2>
+                <form id="courseForm">
+                    <div class="form-group">
+                        <label for="courseName">강의명</label>
+                        <input type="text" id="courseName" placeholder="예: 선형대수" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="classroom">강의실</label>
+                        <input type="text" id="classroom" placeholder="예: 공학관 203호" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="day">요일</label>
+                            <select id="day" required>
+                                <option value="">선택</option>
+                                <option value="0">월</option>
+                                <option value="1">화</option>
+                                <option value="2">수</option>
+                                <option value="3">목</option>
+                                <option value="4">금</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="startTime">시작 시간</label>
+                            <select id="startTime" required>
+                                <option value="">선택</option>
+                                <option value="9:00">09:00 (1교시)</option>
+                                <option value="9:30">09:30</option>
+                                <option value="10:00">10:00 (2교시)</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00 (3교시)</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00 (4교시)</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00 (5교시)</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00 (6교시)</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00 (7교시)</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00 (8교시)</option>
+                                <option value="16:30">16:30</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duration">수업시간</label>
+                            <select id="duration" required>
+                                <option value="">선택</option>
+                                <option value="30">30분</option>
+                                <option value="60">1시간</option>
+                                <option value="90">1.5시간</option>
+                                <option value="120">2시간</option>
+                                <option value="150">2.5시간</option>
+                                <option value="180">3시간</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-add">강의 추가</button>
+                </form>
+
+                <div id="courseList" class="course-list">
+                    <h3>등록된 강의</h3>
+                    <div id="courses" class="courses-container">
+                        <!-- JavaScript로 생성됨 -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
